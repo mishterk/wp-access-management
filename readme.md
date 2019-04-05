@@ -1,5 +1,8 @@
 # How to use
 
+<br>
+<br>
+
 ## `RedirectAfterLogout`
 
 Allows you to set where the user will end up after they log out. 
@@ -27,7 +30,6 @@ $redirect->init();
 $redirect->disable();
 ```
 
-<br>
 <br>
 <br>
 
