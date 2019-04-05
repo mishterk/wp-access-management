@@ -27,7 +27,9 @@ $redirect->init();
 $redirect->disable();
 ```
 
----
+<br>
+<br>
+<br>
 
 ## `DisableAdminBar`
 
