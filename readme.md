@@ -61,7 +61,7 @@ $admin_bar->show_for_role( 'editor' );
 $admin_bar->init();
 ```
 
-or
+_…or…_
 
 ```php
 $admin_bar = new \AccessManagement\DisableAdminBar();
@@ -78,7 +78,7 @@ $admin_bar->show_for_capability( 'install_plugins' );
 $admin_bar->init();
 ```
 
-or 
+_…or…_
 
 ```php
 $admin_bar = new \AccessManagement\DisableAdminBar();
@@ -95,7 +95,7 @@ $admin_bar->show_for_user_id( 2 );
 $admin_bar->init();
 ```
 
-or
+_…or…_
 
 ```php
 $admin_bar = new \AccessManagement\DisableAdminBar();
