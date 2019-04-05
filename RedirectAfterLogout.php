@@ -4,10 +4,13 @@
 namespace AccessManagement;
 
 
+use AccessManagement\Traits\IsHooked;
+
+
 class RedirectAfterLogout {
+	use IsHooked;
 
 
-	private $priority;
 	private $redirect_url;
 
 
@@ -16,21 +19,13 @@ class RedirectAfterLogout {
 	 * @param $redirect_url
 	 */
 	public function __construct( $redirect_url = '', $priority = 10 ) {
-		$this->priority     = $priority;
+		$this->set_priority( $priority );
 		$this->redirect_url = $redirect_url;
 	}
 
 
 	public function init() {
 		add_action( 'wp_logout', [ $this, '_redirect_on_logout' ], $this->priority );
-	}
-
-
-	public function _redirect_on_logout() {
-		if ( $this->redirect_url ) {
-			wp_redirect( $this->redirect_url );
-			exit();
-		}
 	}
 
 
@@ -44,8 +39,11 @@ class RedirectAfterLogout {
 	}
 
 
-	public function set_priority( $priority ) {
-		$this->redirect_url = intval( $priority );
+	public function _redirect_on_logout() {
+		if ( $this->redirect_url ) {
+			wp_redirect( $this->redirect_url );
+			exit();
+		}
 	}
 
 
